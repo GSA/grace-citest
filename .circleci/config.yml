@@ -9,9 +9,10 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            echo "export CI_USER=$CIRCLE_USER" >> $BASH_ENV
+            echo "export CI_USER=$(echo $CIRCLE_USER)" >> $BASH_ENV
             source $BASH_ENV
-            pwd && make test
+            pwd
+            make test
 workflows:
   version: 2
   test_and_apply:
