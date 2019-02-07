@@ -7,13 +7,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Export Environment Variables
+          command: |
+            echo 'export CI_USER="$CIRCLE_USER"' >> $BASH_ENV
+      - run:
           name: Run Tests
           command: |
-            echo "CIRCLE_USER ${CIRCLE_USER}"
-            echo "export CI_USER=$(echo $CIRCLE_USER)" >> $BASH_ENV
-            source $BASH_ENV
-            pwd
-            make test
+            pwd && make test
 workflows:
   version: 2
   test_and_apply:
