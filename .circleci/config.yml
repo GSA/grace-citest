@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Export Environment Variables
           command: |
+            echo "exporting CI_USER=${CIRCLE_USER}"
             echo 'export CI_USER="$CIRCLE_USER"' >> $BASH_ENV
       - run:
           name: Run Tests
