@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
+            echo "CIRCLE_USER ${CIRCLE_USER}"
             echo "export CI_USER=$(echo $CIRCLE_USER)" >> $BASH_ENV
             source $BASH_ENV
             pwd
