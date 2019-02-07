@@ -1,6 +1,6 @@
 
 parts = $(subst -, ,$(CIRCLE_USERNAME))
-environment := $(shell echo "$(word 2,$(parts))" | tr '[:lower:]', '[:upper:]')
+environment := $(shell echo "$(word 2,$(parts))" | tr '[:lower:]' '[:upper:]')
 environments := production development
 ifneq ($(filter $(environment),$(environments)),)
     export appenv := $(environment)
