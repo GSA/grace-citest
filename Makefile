@@ -6,7 +6,7 @@ ifneq ($(filter $(environment),$(environments)),)
     export appenv := $(environment)
 endif
 
-.PHONY: test test_ci
+.PHONY: precommit test test_ci
 test: precommit test_ci
 test_ci:
 	@echo "CIRCLE_USERNAME: $(CIRCLE_USERNAME)"
